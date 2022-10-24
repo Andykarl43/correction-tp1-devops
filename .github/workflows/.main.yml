@@ -4,8 +4,8 @@ on:
   push:
     branches: #TODO 
     - master
-  pull_request:
-    - develop
+ # pull_request:
+ #   - develop
 
 jobs:
   test-backend: 
