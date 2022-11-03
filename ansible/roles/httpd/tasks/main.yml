@@ -1,0 +1,10 @@
+---
+# tasks file for roles/httpd
+- name: Run HTTPD
+  docker_container:
+      name: httpd
+      image: andykarl43/correction-tp1-devops:httpd
+      networks:
+        - name: andy
+      ports:
+        - 80:80

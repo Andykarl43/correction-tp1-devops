@@ -1,0 +1,12 @@
+---
+# tasks file for roles/app
+  - name: Launch App/ Backend
+    docker_container:
+      name: backend
+      image: andykarl43/correction-tp1-devops:simple-api
+      volumes:
+        - database-data:/var/lib/postgresql/data
+      networks:
+        - name: "andy"
+      ports:
+        - "8080:8080"

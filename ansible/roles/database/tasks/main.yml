@@ -1,0 +1,16 @@
+---
+# tasks file for roles/database
+  - name: Launch database and connect to network
+    docker_container:
+      name: database
+      image: andykarl43/correction-tp1-devops:database
+      pull: true
+      recreate: true
+      env:
+        POSTGRES_PASSWORD=pwd
+        POSTGRES_USER=usr
+        POSTGRES_DB=db
+      networks:
+        - name: andy
+      ports:
+        - 5432:5432
